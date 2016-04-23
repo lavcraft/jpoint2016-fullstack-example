@@ -1,8 +1,6 @@
 buildscript {
     repositories {
-        maven {
-            url 'http://ar.dcos/artifactory/plugins-release'
-        }
+      jcenter()
     }
     dependencies {
         classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4+"
@@ -26,7 +24,7 @@ dependencies {
 }
 
 artifactory {
-    contextUrl = "http://ar.dcos/artifactory/"
+    contextUrl = "http://m1.dcos:10000/artifactory/"
     publish {
         repository {
             repoKey = 'libs-release-local'
@@ -44,7 +42,7 @@ artifactory {
 publishing {
     repositories {
         maven {
-            url 'http://ar.dcos/libs-release-local/'
+            url 'http://m1.dcos:10000/artifactory/libs-release-local/'
         }
     }
     publications {
