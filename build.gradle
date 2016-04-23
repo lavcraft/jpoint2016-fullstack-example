@@ -30,6 +30,10 @@ artifactory {
             repoKey = 'libs-release-local'
             maven = true
         }
+        defaults {
+        //List of Gradle Publications (names or objects) from which to collect the list of artifacts to be deployed to Artifactory.
+            publications ('mavenJava')
+        }
     }
     resolve {
         repository {
@@ -40,11 +44,6 @@ artifactory {
 }
 
 publishing {
-    repositories {
-        maven {
-            url 'http://192.168.65.60:10000/artifactory/libs-release-local/'
-        }
-    }
     publications {
         mavenJava(MavenPublication) {
             from components.java
