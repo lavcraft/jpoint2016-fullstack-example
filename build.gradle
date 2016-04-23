@@ -24,7 +24,7 @@ dependencies {
 }
 
 artifactory {
-    contextUrl = "http://m1.dcos:10000/artifactory/"
+    contextUrl = "http://192.168.65.60:10000/artifactory/"
     publish {
         repository {
             repoKey = 'libs-release-local'
@@ -42,7 +42,7 @@ artifactory {
 publishing {
     repositories {
         maven {
-            url 'http://m1.dcos:10000/artifactory/libs-release-local/'
+            url 'http://192.168.65.60:10000/artifactory/libs-release-local/'
         }
     }
     publications {
